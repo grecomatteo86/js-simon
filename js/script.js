@@ -7,12 +7,13 @@ il software dice quanti e quali dei numeri da indovinare
 sono stati individuati. */
 
 
-// 1. Creo l'array generato dalla cpu e un array vuoto in cui inserirò i numeri scelti dall'utente
+/* 1. Creo l'array generato dalla cpu
+e un array vuoto in cui inserirò i numeri scelti dall'utente */
 var arrayCpu = [1,2,3,4,5];
 var arrayUtente = [];
 
-// 2. Stampo
-alert(arrayCpu);
+// 2. Stampo un alert che dice all'utente di memorizzare 5 numeri
+alert('memorizza i seguenti numeri ' + arrayCpu);
 
 
 
@@ -31,10 +32,10 @@ setTimeout(function () {
 
   }
 
-  console.log(arrayUtente);
+  alert('I numeri che hai inserito sono: ' + arrayUtente);
 
-  /* 4. Con un ciclo for faccio un controllo:
-  se l'utente indovina uno o più numeri presente nell'arrayCpu
+  /* 4. Con un ciclo for eseguo il controllo:
+  se nei suoi numeri inseriti l'utente indovina uno o più numeri presenti nell'arrayCpu
   allora vengono pushati in un nuovo array numeriIndovinati. */
   var numeriIndovinati = [];
 
@@ -48,7 +49,10 @@ setTimeout(function () {
 
   }
 
-  console.log(numeriIndovinati);
+  // 5. Stampo i messaggi
+  alert('I numeri che hai indovinato sono: ' + numeriIndovinati);
+
+  alert('Punti totalizzati: ' + numeriIndovinati.length);
 
 
 }, 3000);
