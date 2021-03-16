@@ -7,16 +7,29 @@ il software dice quanti e quali dei numeri da indovinare
 sono stati individuati. */
 
 // 1.
-var numeri = [1,2,3,4,5];
-alert(numeri);
+var arrayCpu = [1,2,3,4,5];
+alert(arrayCpu);
 
+// 2.
+var arrayUtente = [];
 
+// 3.
 setTimeout(function () {
 
   for ( i = 1; i <= 5; i++) {
 
-    prompt('inserisci');
+    var numeriUtente = prompt('inserisci i numeri');
+
+    // 4.
+    arrayUtente.push(numeriUtente);
+
+    // 5.
+    if () {
+
+    }
 
   }
+
+  alert('hai finito');
 
 }, 3000);
