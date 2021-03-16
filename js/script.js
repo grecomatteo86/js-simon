@@ -37,7 +37,7 @@ che poi pusho nell'arrayUtente. */
 
 setTimeout(function () {
 
-  for ( var i = 1; i <= arrayCpu.length; i++) {
+  for ( var i = 1; i <= 5; i++) {
 
     var numeriUtente = parseInt(prompt('inserisci i numeri'));
 
