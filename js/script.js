@@ -7,19 +7,23 @@ il software dice quanti e quali dei numeri da indovinare
 sono stati individuati. */
 
 
-// 1.
+// 1. Creo l'array generato dalla cpu e un array vuoto in cui inserirò i numeri scelti dall'utente
 var arrayCpu = [1,2,3,4,5];
+var arrayUtente = [];
+
+// 2. Stampo
 alert(arrayCpu);
 
 
-// 2.
-var arrayUtente = [];
 
+/* 3. Imposto la timing function che mi attiva la funzione
+dopo un tempo certo e che fa partire il timer.
+Con un ciclo for vado a chiedere all'utente,
+dopo che trascorrono i secondi, di inserire, uno alla volta, i numeri. */
 
-// 3.
 setTimeout(function () {
 
-  for ( i = 1; i <= 5; i++) {
+  for ( var i = 1; i <= 5; i++) {
 
     var numeriUtente = parseInt(prompt('inserisci i numeri'));
 
@@ -29,82 +33,22 @@ setTimeout(function () {
 
   console.log(arrayUtente);
 
-/*
-  var numeriInseriti = [];
+  /* 4. Con un ciclo for faccio un controllo:
+  se l'utente indovina uno o più numeri presente nell'arrayCpu
+  allora vengono pushati in un nuovo array numeriIndovinati. */
+  var numeriIndovinati = [];
 
-  setTimeout(function () {
+  for ( var i = 0; i <= arrayUtente.length; i++) {
 
-    for (var i = 0; i < numeriSimon.length; i++) {
+    if (arrayCpu.includes(arrayUtente[i])) {
 
-      var num = parseInt(prompt("Inserisci qui i numeri di prima, uno alla volta:"));
-      numeriInseriti.push(num);
+      numeriIndovinati.push(arrayUtente[i]);
+
     }
 
-  console.log("Questi sono i numeri che hai scritto tu: " + numeriInseriti)*/
+  }
+
+  console.log(numeriIndovinati);
 
 
 }, 3000);
-
-
-
-
-/*
-// FUNZIONI GENERICHE
-
-// Randomizer
-function randomizer(min, max){
-  return Math.floor(Math.random()*(max - min + 1) + min);
-}
-
-
-
-//PROGRAMMA
-
-// Creo l'array dei 5 numeri casuali con un croccante ciclo For
-
-var numeriSimon = [];
-
-for (var i = 0; i < 5; i++) {
- numeriSimon.push(randomizer(1,40));
-}
-
-console.log("Questi sono i numeri generati casualmente " + numeriSimon);
-
-// Stampo l'alert con i numeri da ricordare:
-
-alert("Ricorda bene i numeri " + numeriSimon);
-
-// Definisco array numeri inseriti; uso setTimeOut per inserire una funzione con delay di 30 secondi dall'alert.
-//All'interno uso un ciclo for lungo quanto l'array numeri simon e chiedo x prompt; i numeri inseriti nel prompt sono salvati in una variabile
-// E infine pushati in un array numeriInseriti.
-
-var numeriInseriti = [];
-
-setTimeout(function () {
-
-  for (var i = 0; i < numeriSimon.length; i++) {
-
-    var num = parseInt(prompt("Inserisci qui i numeri di prima, uno alla volta:"));
-    numeriInseriti.push(num);
-  }
-
-console.log("Questi sono i numeri che hai scritto tu: " + numeriInseriti)
-
-  // Confronto i due array attraversandoli con un ciclo for e usando il metodo includes per ogni elemento del primo nei confronti del secondo.
-  //In questo modo definisco il punteggio e i numeri indovinati.
-
-  var numeriIndovinati = [];
-  var punteggio = 0;
-
-  for (var i = 0; i < numeriInseriti.length; i++) {
-
-    if (numeriSimon.includes(numeriInseriti[i])) {
-      numeriIndovinati.push(numeriInseriti[i]);
-    }
-
-  }
-
-  alert("I numeri che hai indovinato sono: " + numeriIndovinati + ". Il tuo punteggio è: " + numeriIndovinati.length);
-  console.log("Hai indovinato i numeri: " + numeriIndovinati + "; il tuo punteggio è: " + numeriIndovinati.length + " su " + numeriSimon.length + " punti massimi totalizzabili.");
-
-}, 30000);*/
