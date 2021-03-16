@@ -63,7 +63,8 @@ setTimeout(function () {
 
   }
 
-  // 8. Stampo i messaggi
+  /* 8. Stampo i messaggi:
+  faccio un ulteriore controllo, se l'utente non indovina nessun numero stampo un messaggio ad hoc. */
   if (numeriIndovinati == 0) {
 
     alert('Non hai indovinato nessun numero');
